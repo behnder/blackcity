@@ -20,70 +20,29 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
 
 
-
-
     private void Start()
     {
-
         rigidbody = GetComponent<Rigidbody2D>();
-
         animator = GetComponent<Animator>();
-
     }
 
     private void Update()
     {
         HorizontalMovement();
-
-        ActivateRunningAnimation();
-
-        ActivateJumpAnimation();
-
-        ActivateAttackAnimation();
+        Jump();
 
     }
 
-    private void ActivateAttackAnimation()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-
-
-            animator.SetBool("isAttacking", true);
-            animator.SetBool("isRunning", false);
-            animator.SetBool("isJumping", false);
-
-            StartCoroutine(StopAttack());
-        }
-    }
-
-    private void ActivateJumpAnimation()
+    private void Jump()
     {
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             rigidbody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isJumping = true;
-            animator.SetBool("isJumping", true);
         }
     }
 
-    private void ActivateRunningAnimation()
-    {
-        if (move < 0)
-        {
 
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            animator.SetBool("isRunning", true);
-        }
-        else if (move > 0)
-        {
-
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-            animator.SetBool("isRunning", true);
-        }
-        else if (move == 0)
-            animator.SetBool("isRunning", false);
-    }
 
     private void HorizontalMovement()
     {
@@ -100,25 +59,19 @@ public class PlayerMovement : MonoBehaviour
         weapon.SetActive(false);
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
-            animator.SetBool("isJumping", false);
-            animator.GetBool("isJumping");
         }
 
     }
-
 
     IEnumerator StopAttack()
     {
         yield return new WaitForSeconds(0.3f);
         animator.SetBool("isAttacking", false);
     }
-
-
 }

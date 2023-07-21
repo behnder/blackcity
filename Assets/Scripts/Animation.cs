@@ -5,22 +5,14 @@ using UnityEngine;
 public class Animation : MonoBehaviour
 {
    
-    [SerializeField] float jumpForce;
-
+    [SerializeField] private bool isJumping;
+    [SerializeField] float move;
     [SerializeField] GameObject weapon;
 
-
-    private Rigidbody2D rigidbody;
-    [SerializeField] private bool isJumping;
-    [SerializeField] private bool isTouchingWall;
-
-    [SerializeField] float move;
-
     private Animator animator;
+
     private void Start()
     {
-
-        rigidbody = GetComponent<Rigidbody2D>();
 
         animator = GetComponent<Animator>();
 
@@ -28,7 +20,6 @@ public class Animation : MonoBehaviour
 
     private void Update()
     {
-        
 
         ActivateRunningAnimation();
 
@@ -42,8 +33,6 @@ public class Animation : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-
-
             animator.SetBool("isAttacking", true);
             animator.SetBool("isRunning", false);
             animator.SetBool("isJumping", false);
@@ -56,7 +45,7 @@ public class Animation : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
-            rigidbody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            print("jumping");
             isJumping = true;
             animator.SetBool("isJumping", true);
         }
@@ -64,9 +53,9 @@ public class Animation : MonoBehaviour
 
     private void ActivateRunningAnimation()
     {
+        move = Input.GetAxis("Horizontal");
         if (move < 0)
         {
-
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             animator.SetBool("isRunning", true);
         }
