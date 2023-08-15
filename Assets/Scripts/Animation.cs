@@ -1,20 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Animation : MonoBehaviour
 {
-   
+
     [SerializeField] private bool isJumping;
     [SerializeField] float move;
     [SerializeField] GameObject weapon;
 
+    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField] GroundChecker groundChecker;
     private Animator animator;
+    private float speed;
 
     private void Start()
     {
 
         animator = GetComponent<Animator>();
+ 
+        speed = playerMovement.Speed;
+
 
     }
 
@@ -23,31 +30,93 @@ public class Animation : MonoBehaviour
 
         ActivateRunningAnimation();
 
-        ActivateJumpAnimation();
 
         ActivateAttackAnimation();
+        ActivateJumpAnimation();
+        ActivateAirAttackAnimation();
 
+        ActivateCrouchAnimation();
+
+    }
+
+    private void ActivateCrouchAnimation()
+    {
+        if (Input.GetAxis("Vertical") < 0)
+
+        {
+            animator.SetBool("isCrouching", true);
+        }
+        else
+        {
+            animator.SetBool("isCrouching", false);
+
+        }
+    }
+
+    private void ActivateAirAttackAnimation()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            if (isJumping)
+            {
+                animator.SetBool("isAirAttacking", true);
+                playerMovement.Speed = 2;
+
+            }
+
+         
+        }
     }
 
     private void ActivateAttackAnimation()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            animator.SetBool("isAttacking", true);
+            if (!isJumping)
+            {
+                animator.SetBool("isAttacking", true);
+                playerMovement.Speed = 2;
+
+            }
+     
+
+            playerMovement.Move = 0;
+            playerMovement.rb.velocity = new Vector2(0, playerMovement.rb.velocity.y);
+
+          
             animator.SetBool("isRunning", false);
             animator.SetBool("isJumping", false);
 
             StartCoroutine(StopAttack());
         }
+
     }
 
     private void ActivateJumpAnimation()
     {
+
+        if (groundChecker.groundChecker)
+        {
+            isJumping = false;
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isAirAttacking", false);
+        }
+        else
+        {
+            isJumping = true;
+        }
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
-            print("jumping");
             isJumping = true;
             animator.SetBool("isJumping", true);
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                animator.SetBool("isAttacking", false);
+                animator.SetBool("isAirAttacking", true);
+
+            }
+
+
         }
     }
 
@@ -69,7 +138,7 @@ public class Animation : MonoBehaviour
             animator.SetBool("isRunning", false);
     }
 
-
+    //are called in the animation (attack-punch animation)
     private void ActivateWeapon()
     {
         weapon.SetActive(true);
@@ -80,22 +149,11 @@ public class Animation : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-            animator.SetBool("isJumping", false);
-            animator.GetBool("isJumping");
-        }
-
-    }
-
-
     IEnumerator StopAttack()
     {
         yield return new WaitForSeconds(0.3f);
         animator.SetBool("isAttacking", false);
+        playerMovement.Speed = 6.5f;
+
     }
 }

@@ -6,24 +6,24 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
-    [SerializeField] float raycastDistance;
-    [SerializeField] LayerMask platformLayer;
-    [SerializeField] GameObject weapon;
+    [SerializeField] GroundChecker groundChecker;
+
+    public bool canMove = true;
 
 
-    private Rigidbody2D rigidbody;
+    public Rigidbody2D rb;
     [SerializeField] private bool isJumping;
-    [SerializeField] private bool isTouchingWall;
+
 
     [SerializeField] float move;
-
-    private Animator animator;
-
+    
+    public float Move { get => move; set => move = value; }
+    public float Speed { get => speed; set => speed = value; }
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     private void Update()
@@ -35,10 +35,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        if (groundChecker.groundChecker)
+        {
+            isJumping = false;
+        }
+
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
-            rigidbody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            isJumping = true;
+          
+                rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+                isJumping = true;
+                groundChecker.groundChecker = false;
+
+ 
+       
+
         }
     }
 
@@ -46,32 +57,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
-        move = Input.GetAxis("Horizontal");
-        rigidbody.velocity = new Vector2(move * speed, rigidbody.velocity.y);
-    }
+        Move = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(Move * Speed, rb.velocity.y);
 
-    private void ActivateWeapon()
-    {
-        weapon.SetActive(true);
-    }
-    private void DeactivateWeapon()
-    {
-        weapon.SetActive(false);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isJumping = false;
-        }
 
     }
 
-    IEnumerator StopAttack()
-    {
-        yield return new WaitForSeconds(0.3f);
-        animator.SetBool("isAttacking", false);
-    }
+
+
 }
