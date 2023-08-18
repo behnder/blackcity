@@ -113,10 +113,7 @@ public class Animation : MonoBehaviour
             {
                 animator.SetBool("isAttacking", false);
                 animator.SetBool("isAirAttacking", true);
-
             }
-
-
         }
     }
 
@@ -147,8 +144,6 @@ public class Animation : MonoBehaviour
     {
         weapon.SetActive(false);
     }
-
-
     IEnumerator StopAttack()
     {
         yield return new WaitForSeconds(0.3f);

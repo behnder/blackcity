@@ -40,7 +40,8 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    // Start is called before the first frame update
+    public GameObject Weapon { get => weapon; set => weapon = value; }
+
     void Start()
     {
 
@@ -53,14 +54,14 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         if (Vector2.Distance(gameObject.transform.position, hero.transform.position) < distanceBetween)
-            weapon.GetComponent<Animator>().Play("Enemy_Attack_01");
+            Weapon.GetComponent<Animator>().Play("Enemy_Attack_01");
         else
-            weapon.GetComponent<Animator>().Play("Enemy_Weapon_Idle");
+            Weapon.GetComponent<Animator>().Play("Enemy_Weapon_Idle");
     }
 
     private void StopAttack()
     {
-        weapon.SetActive(false);
+        Weapon.SetActive(false);
 
     }
     private void FixedUpdate()
