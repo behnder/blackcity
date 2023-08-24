@@ -166,7 +166,7 @@ MonoBehaviour:
   jumpCheckOffset: 0.1
   followEnabled: 1
   jumpEnabled: 0
-  directionLookEnabled: 0
+  directionLookEnabled: 1
 --- !u!61 &1063841491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushbackDistance: 20
-  pushbackForce: 8
+  pushbackForce: 14
 --- !u!95 &66044528
 Animator:
   serializedVersion: 3

@@ -39,7 +39,7 @@ public class PlatformActivation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("COLLIDING");
+      
         if (collision.gameObject.CompareTag(tagToCollide))
         {
             platformRotation = true;

@@ -59,9 +59,11 @@ public class EnemyGunner : MonoBehaviour
         GameObject bullet = ObjectPool.instance.GetPooledObject();
         if (bullet != null)
         {
-            //bullet.transform.position = bulletPosition
+            bullet.transform.position = gunTransform.position + new Vector3(0, 0, 2);
+            bullet.transform.rotation = gunTransform.rotation;
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
 
+            bullet.SetActive(true);
             bulletRigidbody.velocity = gunTransform.right * 10f; // Adjust bullet speed as needed
         }
 
