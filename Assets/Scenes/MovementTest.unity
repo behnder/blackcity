@@ -1324,8 +1324,8 @@ GameObject:
   - component: {fileID: 592544513}
   m_Layer: 0
   m_Name: CameraZoomOutZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: CameraZoomArea
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1344,6 +1344,7 @@ MonoBehaviour:
   camera: {fileID: 714206019}
   originalZoom: 0
   zoomOut: 8.5
+  ortographicSize: 0
   zoomSpeed: 1
 --- !u!61 &592544514
 BoxCollider2D:
@@ -1358,7 +1359,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.87140656, y: -0.51869583}
+  m_Offset: {x: 0.92149353, y: 1.0340071}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1369,7 +1370,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.0706635, y: 2.9502983}
+  m_Size: {x: 3.9704895, y: 6.055704}
   m_EdgeRadius: 0
 --- !u!4 &592544515
 Transform:
@@ -2475,7 +2476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600217764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -54, y: 57.4, z: 5}
+  m_LocalPosition: {x: -73.29, y: 43.03, z: 5}
   m_LocalScale: {x: 356.1416, y: 141.04617, z: 141.04617}
   m_Children: []
   m_Father: {fileID: 1422594384}
@@ -69346,11 +69347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4926200953660255029, guid: 15b046deb12a8444ca7a02bebe3e567e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -142.4
+      value: -177.35
       objectReference: {fileID: 0}
     - target: {fileID: 4926200953660255029, guid: 15b046deb12a8444ca7a02bebe3e567e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.78
+      value: 31.64
       objectReference: {fileID: 0}
     - target: {fileID: 4926200953660255029, guid: 15b046deb12a8444ca7a02bebe3e567e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69688,7 +69689,7 @@ MonoBehaviour:
   rotationSpeed: 2
   shootingDelay: 2
   gunOffset: 0
-  distanceToActivateGun: 10
+  distanceToActivateGun: 16
   gunTransform: {fileID: 2132865748}
 --- !u!114 &2044094508
 MonoBehaviour:

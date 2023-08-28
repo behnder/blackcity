@@ -7,29 +7,29 @@ public class CameraZoomOutZone : MonoBehaviour
     [SerializeField] Camera camera;
     [SerializeField] float originalZoom;
     [SerializeField] float zoomOut = 60;
+    [SerializeField] float ortographicSize;
 
     [SerializeField] float zoomSpeed = 1;
 
     bool canRemoveZoom = false;
+
     void Start()
     {
         originalZoom = camera.orthographicSize;
+       
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (canRemoveZoom)
-        {
-            if (camera.orthographicSize > 6)
-            {
-                print("is bigger");
-                camera.orthographicSize -= zoomSpeed * Time.deltaTime;
-                // originalZoom -= 0.5f;
-            }
-        }
-        print("canremovezoom " + canRemoveZoom);
-
+        ortographicSize = camera.orthographicSize;
+        //if (canRemoveZoom)
+        //{
+        //    if (camera.orthographicSize > 6)
+        //    {
+        //        camera.orthographicSize -= zoomSpeed * Time.deltaTime;
+        //    }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -37,20 +37,37 @@ public class CameraZoomOutZone : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            canRemoveZoom = true;
+            while (camera.orthographicSize > originalZoom)
+            {
+                camera.orthographicSize -= 0.1f * Time.deltaTime;
+                
+            }
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        canRemoveZoom = false;
         if (collision.CompareTag("Player"))
         {
+
             if (camera.orthographicSize < zoomOut)
             {
                 camera.orthographicSize += zoomSpeed * Time.deltaTime;
-               
             }
         }
 
     }
+
+    IEnumerator RestoreZoom()
+    {
+        camera.orthographicSize -= 0.1f * Time.deltaTime;
+        yield return new WaitForSeconds(0.5f);
+
+    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    canRemoveZoom = false;
+
+    //}
+
 }

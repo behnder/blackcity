@@ -10,15 +10,20 @@ public class EnemyBullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("ON COLLISION BULLET");
-        gameObject.SetActive(false);
+        if (!collision.gameObject.CompareTag("CameraZoomArea"))
+        {
+
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("ON TRIGGER BULLET");
+        if (!collision.gameObject.CompareTag("CameraZoomArea"))
+        {
 
-        gameObject.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 
     void DisableBullet()
