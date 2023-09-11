@@ -27,15 +27,15 @@ public class Animation : MonoBehaviour
 
         speed = playerMovement.Speed;
 
-       
+
 
 
     }
 
     private void Update()
     {
-        xPos.text = "x " + playerMovement.rb.velocity.y.ToString();
-        yPos.text = "y " + playerMovement.rb.velocity.x.ToString();
+        xPos.text = "x " + Mathf.Round(playerMovement.rb.velocity.x).ToString();
+        yPos.text = "y " + Mathf.Round(playerMovement.rb.velocity.y).ToString();
         ActivateRunningAnimation();
 
 
@@ -45,18 +45,39 @@ public class Animation : MonoBehaviour
 
         ActivateCrouchAnimation();
         ActivateIdleAnimation();
-        if (playerMovement.rb.velocity.y != 0)
+
+        CheckAirAttackAnimation();
+
+    }
+
+    private void CheckAirAttackAnimation()
+    {
+        if (Mathf.Round(playerMovement.rb.velocity.y) == 0 && groundCheckerActivator.activeSelf == true)
         {
-            print("playerMovement VELOCITY in Y axis" + playerMovement.rb.velocity.y);
-            airWeapon.SetActive(true);
+            airWeapon.SetActive(false);
+            StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
+
         }
         else
         {
-            airWeapon.SetActive(false);
+            groundCheckerActivator.SetActive(false);
+            StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
+
 
         }
     }
 
+    IEnumerator DelayGroundCheckerActivation()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (Mathf.Round(playerMovement.rb.velocity.y) == 0)
+        {
+
+            groundCheckerActivator.SetActive(true);
+
+        }
+
+    }
     private void ActivateIdleAnimation()
     {
         if (!isJumping)
@@ -92,7 +113,6 @@ public class Animation : MonoBehaviour
 
             animator.SetBool("isRunning", false);
 
-            //StartCoroutine(StopAirAttack());
         }
 
 
@@ -199,7 +219,7 @@ public class Animation : MonoBehaviour
         //{
         //    airWeapon.SetActive(false);
         //}
-      
+
 
 
     }
