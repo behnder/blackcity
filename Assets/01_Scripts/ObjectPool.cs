@@ -7,9 +7,10 @@ public class ObjectPool : MonoBehaviour
     public static ObjectPool instance;
 
     private List<GameObject> pooledObjects = new List<GameObject>();
-    private int amountToPool = 20;
+    private int amountToPool = 10;
 
     [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject enemy;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class ObjectPool : MonoBehaviour
             GameObject obj = Instantiate(bullet);
             obj.SetActive(false);
             pooledObjects.Add(obj);
+
         }
     }
 

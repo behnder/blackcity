@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetStateName: Enemy_Attack_01
   hasExitTimeValue: 1
-  hero: {fileID: 0}
+  hero: {fileID: 4926200953660255025, guid: 15b046deb12a8444ca7a02bebe3e567e, type: 3}
   weapon: {fileID: 3144951881116728874}
   distanceBetween: 2
   target: {fileID: 0}

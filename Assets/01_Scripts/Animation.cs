@@ -38,38 +38,52 @@ public class Animation : MonoBehaviour
         yPos.text = "y " + Mathf.Round(playerMovement.rb.velocity.y).ToString();
         ActivateRunningAnimation();
 
-
         ActivateAttackAnimation();
         ActivateJumpAnimation();
-        ActivateAirAttackAnimation();
 
         ActivateCrouchAnimation();
         ActivateIdleAnimation();
 
+        ActivateAirAttackAnimation();
         CheckAirAttackAnimation();
 
+        if (Mathf.Round(playerMovement.rb.velocity.y) !=0 )
+        {
+            groundCheckerActivator.SetActive(false);
+        }
+        else
+        {
+            groundCheckerActivator.SetActive(true);
+
+        }
     }
 
     private void CheckAirAttackAnimation()
     {
-        if (Mathf.Round(playerMovement.rb.velocity.y) == 0 && groundCheckerActivator.activeSelf == true)
+        //if (Mathf.Round(playerMovement.rb.velocity.y) == 0 && groundCheckerActivator.activeSelf == true)
+        //{
+        //    airWeapon.SetActive(false);
+        //    StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
+
+        //}
+        //else  //if groundCheckerActivator is false->
+        //{
+        //    groundCheckerActivator.SetActive(false);
+        //    StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
+
+
+        //}
+
+
+        if (groundChecker.groundChecker == true)
         {
             airWeapon.SetActive(false);
-            StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
-
-        }
-        else
-        {
-            groundCheckerActivator.SetActive(false);
-            StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
-
-
         }
     }
 
     IEnumerator DelayGroundCheckerActivation()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.6f);
         if (Mathf.Round(playerMovement.rb.velocity.y) == 0)
         {
 
@@ -108,8 +122,8 @@ public class Animation : MonoBehaviour
         {
             animator.SetBool("isAirAttacking", true);
 
-            playerMovement.Move = 0;
-            playerMovement.rb.velocity = new Vector2(0, playerMovement.rb.velocity.y);
+            //playerMovement.Move = 0; borrar?
+            //playerMovement.rb.velocity = new Vector2(0, playerMovement.rb.velocity.y); borrar?
 
             animator.SetBool("isRunning", false);
 
@@ -217,7 +231,7 @@ public class Animation : MonoBehaviour
 
         //if (Mathf.Abs(playerMovement.rb.velocity.x) < 0.01)
         //{
-        //    airWeapon.SetActive(false);
+           airWeapon.SetActive(false);
         //}
 
 
