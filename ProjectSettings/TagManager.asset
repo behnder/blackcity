@@ -9,6 +9,8 @@ TagManager:
   - EnemyWeapon
   - EnemyBullet
   - CameraZoomArea
+  - PlayerWeapon01
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Obstacle
   - Enemy
   - InvisibleTriggers
-  - 
+  - boss
   - 
   - 
   - 

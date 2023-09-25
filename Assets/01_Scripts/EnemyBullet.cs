@@ -15,7 +15,7 @@ public class EnemyBullet : MonoBehaviour
 
             gameObject.SetActive(false);
         }
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") )
         {
             collision.gameObject.GetComponent<PlayerHealth>().Health -= 100;
         }

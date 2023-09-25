@@ -6,7 +6,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
 {
 
     [SerializeField] Transform playerTransform;
-    [SerializeField] GameObject bulletPrefab;
+   // [SerializeField] GameObject bulletPrefab;
     [SerializeField] float rotationSpeed = 2f;
     [SerializeField] float shootingDelay = 1f;
     [SerializeField] float gunOffset;
@@ -57,8 +57,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
         yield return new WaitForSeconds(shootingDelay);
 
         // Create a bullet and shoot it in the gun's direction (from the bullet pool)
-        //GameObject bullet = Instantiate(bulletPrefab, gunTransform.position + new Vector3(0, 0, 2), gunTransform.rotation);
-
+        
         GameObject bullet = ObjectPool.instance.GetPooledObject();
         if (bullet != null)
         {

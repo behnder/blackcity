@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class AntiBossWeaponPool : MonoBehaviour
 {
-    public static ObjectPool instance;
+    public static AntiBossWeaponPool instance;
 
     private List<GameObject> pooledObjects = new List<GameObject>();
-    private int amountToPool = 7;
+    private int amountToPool = 5;
 
     [SerializeField] private GameObject bullet;
-  
+
 
     private void Awake()
     {
@@ -41,5 +41,4 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
-
 }
