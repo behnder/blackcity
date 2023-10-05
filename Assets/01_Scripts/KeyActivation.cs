@@ -9,13 +9,19 @@ public class KeyActivation : MonoBehaviour
 
     private void Start()
     {
-      
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        mechanismToEnable.GetComponent<Animator>().Play(animationToPlay);
-        Destroy(gameObject);
-        
+        if (collision.transform.CompareTag("Player"))
+        {
+            mechanismToEnable.GetComponent<Animator>().Play(animationToPlay);
+            Destroy(gameObject);
+
+        }
+
     }
+    
+
 }

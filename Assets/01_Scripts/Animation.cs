@@ -34,8 +34,7 @@ public class Animation : MonoBehaviour
 
     private void Update()
     {
-        xPos.text = "x " + Mathf.Round(playerMovement.rb.velocity.x).ToString();
-        yPos.text = "y " + Mathf.Round(playerMovement.rb.velocity.y).ToString();
+       
         ActivateRunningAnimation();
 
         ActivateAttackAnimation();

@@ -3,8 +3,8 @@ using Pathfinding;
 
 public class EnemyAI : MonoBehaviour
 {
-    public string targetStateName = "Enemy_Attack_01"; // Replace with the name of your target state
-    public bool hasExitTimeValue = true; // Replace with the desired value for "Has Exit Time"
+    //public string targetStateName = "Enemy_Attack_01"; // Replace with the name of your target state
+    //public bool hasExitTimeValue = true; // Replace with the desired value for "Has Exit Time"
 
     [SerializeField] GameObject hero;
     [SerializeField] GameObject weapon;
@@ -41,12 +41,9 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-
- 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, pathupdateSeconds);
-
     }
     private void Update()
     {
@@ -110,11 +107,9 @@ public class EnemyAI : MonoBehaviour
         }
 
         //Movement
-       // rb.AddForce(force);
         rb.AddForce(new Vector2(force.x, 0));
 
         //Next Waypoint
-
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if(distance < nextWaypointDistance)
         {

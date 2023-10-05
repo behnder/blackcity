@@ -15,11 +15,13 @@ public class AttackArea : MonoBehaviour
             Vector2 hitDirection = collision.transform.position - transform.position;
 
             // Call the Hit method of the enemy's EnemyController
+            #region pushback effect
             EnemyPushBackEffect pushbackEffect = collision.GetComponent<EnemyPushBackEffect>();
             if (pushbackEffect != null)
             {
                 pushbackEffect.Hit(hitDirection.normalized); // Pass normalized hit direction
             }
+            #endregion
             if (collision.GetComponent<IHealth>() != null)
             {
                 collision.GetComponent<IHealth>().Health -= 100;

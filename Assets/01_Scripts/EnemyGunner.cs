@@ -6,7 +6,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
 {
 
     [SerializeField] Transform playerTransform;
-   // [SerializeField] GameObject bulletPrefab;
+    // [SerializeField] GameObject bulletPrefab;
     [SerializeField] float rotationSpeed = 2f;
     [SerializeField] float shootingDelay = 1f;
     [SerializeField] float gunOffset;
@@ -53,11 +53,9 @@ public class EnemyGunner : MonoBehaviour, IHealth
     private IEnumerator ShootCoroutine()
     {
         canShoot = false; // Prevent shooting while the coroutine is running
-
         yield return new WaitForSeconds(shootingDelay);
 
-        // Create a bullet and shoot it in the gun's direction (from the bullet pool)
-        
+        // Create a bullet and shoot it in the gun's direction (from the bullet pool)    
         GameObject bullet = ObjectPool.instance.GetPooledObject();
         if (bullet != null)
         {
@@ -68,18 +66,16 @@ public class EnemyGunner : MonoBehaviour, IHealth
             bullet.SetActive(true);
             bulletRigidbody.velocity = gunTransform.right * 10f; // Adjust bullet speed as needed
         }
-
         canShoot = true; // Allow shooting again
-
 
     }
 
     public void CheckHealth()
     {
-        
         if (Health <= 0)
         {
             transform.GetChild(0).GetComponent<Animator>().Play("Enemy_Dying");
+            GetComponent<BoxCollider2D>().enabled = false;
             Invoke("DestroyItself", 0.5f);
         }
     }

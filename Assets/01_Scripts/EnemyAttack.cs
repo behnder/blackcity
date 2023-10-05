@@ -10,12 +10,12 @@ public class EnemyAttack : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         #region pushback effect
-        Vector2 hitDirection = collision.transform.position - transform.position;
-        EnemyPushBackEffect pushbackEffect = collision.gameObject.GetComponent<EnemyPushBackEffect>();
-        if (pushbackEffect != null)
-        {
-            pushbackEffect.Hit(hitDirection.normalized); // Pass normalized hit direction
-        }
+        //Vector2 hitDirection = collision.transform.position - transform.position;
+        //EnemyPushBackEffect pushbackEffect = collision.gameObject.GetComponent<EnemyPushBackEffect>();
+        //if (pushbackEffect != null)
+        //{
+        //    pushbackEffect.Hit(hitDirection.normalized); // Pass normalized hit direction
+        //}
         #endregion
 
         if (collision.gameObject.CompareTag(tagToCollide))

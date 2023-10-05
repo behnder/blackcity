@@ -8,29 +8,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] GroundChecker groundChecker;
 
-    public bool canMove = true;
-
-
     public Rigidbody2D rb;
     [SerializeField] private bool isJumping;
-
-
     [SerializeField] float move;
-    
+    public bool canMoveItSelf = true;
+
     public float Move { get => move; set => move = value; }
     public float Speed { get => speed; set => speed = value; }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     private void Update()
     {
-        HorizontalMovement();
-        Jump();
-
+        if (canMoveItSelf) // this will be able from knockback script(or not)
+        {
+            HorizontalMovement();
+            Jump();
+        }
     }
 
     private void Jump()
@@ -39,30 +36,16 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
-          
-                rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-                isJumping = true;
-                groundChecker.groundChecker = false;
-
- 
-       
-
+            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            isJumping = true;
+            groundChecker.groundChecker = false;
         }
     }
-
-
-
     private void HorizontalMovement()
     {
         Move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(Move * Speed, rb.velocity.y);
-
-
     }
-
-
-
 }

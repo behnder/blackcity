@@ -4,46 +4,57 @@ using UnityEngine;
 
 public class KnockbackEffect : MonoBehaviour
 {
-    public float knockbackForce = 5.0f;
-    public float knockbackDuration = 0.2f;
+    private PlayerMovement playerMovement;
+    [SerializeField] float knockbackForce = 5.0f;
+    [SerializeField] float knockbackDuration = 0f;
+    [SerializeField] float knockbackTotalTime = 0.2f;
+    [SerializeField] string collisionKnockbackTag;
+    [SerializeField] bool knockBackFromRight;
 
     private Rigidbody2D rb;
     private float knockbackStartTime;
     private bool canKnockback;
-
+    //----------------------------------------
     private void Start()
     {
+        playerMovement = GetComponent<PlayerMovement>();
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            canKnockback = true;
-            // Calculate the knockback direction away from the enemy.
-            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
-
-            // Apply the knockback force.
-            rb.velocity = knockbackDirection * knockbackForce;
-
-            // Record the time when knockback started.
-            knockbackStartTime = Time.time;
-        }
     }
 
     private void Update()
     {
-        if (canKnockback)
+        if (knockbackDuration <= 0)
         {
-            if (Time.time - knockbackStartTime > knockbackDuration)
-            {
-                // Disable the knockback effect by resetting the velocity.
-                rb.velocity = Vector2.zero;
-
-            }
-            canKnockback = false;
+            playerMovement.canMoveItSelf = true;
         }
-        // Check if the knockback duration has passed.
+        else
+        {
+            if (knockBackFromRight == true)
+            {
+                rb.velocity = new Vector2(knockbackForce, 5f);
+            }
+            if (knockBackFromRight == false)
+            {
+                rb.velocity = new Vector2(-knockbackForce, 5f);
+            }
+            knockbackDuration -= Time.deltaTime;
+            playerMovement.canMoveItSelf = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            knockbackDuration = knockbackTotalTime; //set the timer for the collision
+
+            if (collision.transform.position.x <= transform.position.x) //select if it's from the right or left side
+            {
+                knockBackFromRight = true;
+            }
+            else
+            {
+                knockBackFromRight = false;
+            }
+        }
     }
 }

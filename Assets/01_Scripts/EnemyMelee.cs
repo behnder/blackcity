@@ -19,6 +19,8 @@ public class EnemyMelee : MonoBehaviour, IHealth
         if (Health <= 0)
         {
             GetComponent<Animator>().Play("Enemy_Dying");
+            GetComponent<BoxCollider2D>().enabled = false;
+
             weapon.SetActive(false);
             Invoke("DestroyItself", 0.5f);
         }

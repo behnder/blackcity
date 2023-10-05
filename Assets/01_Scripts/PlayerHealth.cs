@@ -6,28 +6,31 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float health;
-    [SerializeField] Text text;
-  
+    //[SerializeField] Text text; // just for debug purpouses
+ 
+    [SerializeField] GameObject healthBar;
+
+
     private Transform cameraTransform;
     private Vector3 originalPosition;
    
 
     public float Health { get => health; set => health = value; }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-       
+        healthBar.GetComponent<Slider>().maxValue = Health;
+   
+
         cameraTransform = transform;
         originalPosition = cameraTransform.localPosition;
     }
 
     private void Update()
     {
-        text.text = Health.ToString();
-
-        if(Health <= 0)
+        healthBar.GetComponent<Slider>().value = health;
+        //text.text = Health.ToString();// just for debug purpouses
+        if (Health <= 0)
         {
             Shake(0.5f, 1);
         }
@@ -51,7 +54,6 @@ public class PlayerHealth : MonoBehaviour
             cameraTransform.localPosition = originalPosition + new Vector3(x, y, 0f);
 
             elapsed += Time.deltaTime;
-
             yield return null;
         }
 
