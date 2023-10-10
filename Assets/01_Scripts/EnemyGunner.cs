@@ -12,6 +12,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
     [SerializeField] float gunOffset;
     [SerializeField] float distanceToActivateGun = 10f;
     [SerializeField] float health = 200;
+    [SerializeField] Animator gunAnimator;
 
     [SerializeField] Transform gunTransform;
     private bool canShoot = true;
@@ -20,6 +21,8 @@ public class EnemyGunner : MonoBehaviour, IHealth
 
     private void Start()
     {
+        gunAnimator.Play("Gunner_Gun_Shoot");
+        gunAnimator.Play("Gunner_Gun_Idle");
         Health = health;
     }
 
@@ -28,7 +31,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
 
         //Calculate the distance between the hero and the enemy
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-
+        
         if (distanceToPlayer <= distanceToActivateGun)
         {
 
@@ -40,7 +43,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
             float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
 
             // Smoothly rotate the gun towards the player
-            gunTransform.rotation = Quaternion.Slerp(gunTransform.rotation, Quaternion.Euler(0, 0, angle + gunOffset), Time.deltaTime * rotationSpeed);
+            gunTransform.rotation = Quaternion.Slerp(gunTransform.rotation, Quaternion.Euler(0, 0, angle  + gunOffset), Time.deltaTime * rotationSpeed);
 
             // Shoot if the shooting delay has passed and the enemy can shoot
             if (canShoot)
@@ -60,7 +63,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
         if (bullet != null)
         {
             bullet.transform.position = gunTransform.position + new Vector3(0, 0, 2);
-            bullet.transform.rotation = gunTransform.rotation;
+            bullet.transform.rotation = gunTransform.rotation ;
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
 
             bullet.SetActive(true);

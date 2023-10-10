@@ -81,7 +81,7 @@ public class AntiBossWeapon : MonoBehaviour
 
             //scale
             Vector3 localScale = gameObject.transform.localScale;
-            localScale.x = Mathf.Abs(localScale.x);
+            localScale.x = -Mathf.Abs(localScale.x);
             gameObject.transform.localScale = localScale;
 
             direction = false;
@@ -93,7 +93,7 @@ public class AntiBossWeapon : MonoBehaviour
 
             //scale
             Vector3 localScale = gameObject.transform.localScale;
-            localScale.x = -Mathf.Abs(localScale.x);
+            localScale.x = Mathf.Abs(localScale.x);
             gameObject.transform.localScale = localScale;
 
             direction = true;

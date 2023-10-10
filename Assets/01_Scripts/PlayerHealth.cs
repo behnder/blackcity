@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -32,11 +33,15 @@ public class PlayerHealth : MonoBehaviour
         //text.text = Health.ToString();// just for debug purpouses
         if (Health <= 0)
         {
-            Shake(0.5f, 1);
+            Shake(0.3f, 0.2f);
+            Invoke("ReloadGame", 1.7f);
         }
     }
 
-   
+   void ReloadGame()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void Shake(float duration, float magnitude)
     {
         StartCoroutine(ShakeCoroutine(duration, magnitude));
@@ -50,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
         {
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
-
+            originalPosition = cameraTransform.localPosition;
             cameraTransform.localPosition = originalPosition + new Vector3(x, y, 0f);
 
             elapsed += Time.deltaTime;

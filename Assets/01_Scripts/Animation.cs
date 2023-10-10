@@ -59,20 +59,6 @@ public class Animation : MonoBehaviour
 
     private void CheckAirAttackAnimation()
     {
-        //if (Mathf.Round(playerMovement.rb.velocity.y) == 0 && groundCheckerActivator.activeSelf == true)
-        //{
-        //    airWeapon.SetActive(false);
-        //    StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
-
-        //}
-        //else  //if groundCheckerActivator is false->
-        //{
-        //    groundCheckerActivator.SetActive(false);
-        //    StartCoroutine(DelayGroundCheckerActivation());//the delay is because with both activated, the animation is cancelled
-
-
-        //}
-
 
         if (groundChecker.groundChecker == true)
         {
@@ -95,9 +81,7 @@ public class Animation : MonoBehaviour
     {
         if (!isJumping)
         {
-            //StartCoroutine(StopAirAttack());
             animator.SetBool("isAirAttacking", false);
-
         }
     }
 

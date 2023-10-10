@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1415d1708b0d634d8ecbe980b90804f
+guid: 095010ff8fc319e449f61d2ece0e7168
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -38,12 +38,6 @@ TextureImporter:
   - first:
       213: -8039836215719697233
     second: EnemyAttack01_11
-  - first:
-      213: 4513933927865301755
-    second: EnemyAttack01_12
-  - first:
-      213: -1391296877863895404
-    second: EnemyAttack01_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -160,12 +154,12 @@ TextureImporter:
       name: EnemyAttack01_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 6
-        width: 14
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +175,12 @@ TextureImporter:
       name: EnemyAttack01_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 6
-        width: 14
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 70
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +196,12 @@ TextureImporter:
       name: EnemyAttack01_2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 6
-        width: 15
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 140
+        y: 0
+        width: 68
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +217,12 @@ TextureImporter:
       name: EnemyAttack01_3
       rect:
         serializedVersion: 2
-        x: 211
-        y: 6
-        width: 17
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 209
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +238,12 @@ TextureImporter:
       name: EnemyAttack01_4
       rect:
         serializedVersion: 2
-        x: 287
-        y: 6
-        width: 16
-        height: 38
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 280
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +259,12 @@ TextureImporter:
       name: EnemyAttack01_5
       rect:
         serializedVersion: 2
-        x: 363
-        y: 4
-        width: 39
-        height: 35
-      alignment: 9
-      pivot: {x: 0.021224584, y: 0.2371077}
+        x: 350
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -283,15 +277,57 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: EnemyAttack01_6
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54817b31e6d5f580800000000000000
+      internalID: -8793886434517744550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyAttack01_7
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317c29133de689760800000000000000
+      internalID: 7464838235715454739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: EnemyAttack01_8
       rect:
         serializedVersion: 2
-        x: 568
-        y: 6
-        width: 14
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 560
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,12 +343,12 @@ TextureImporter:
       name: EnemyAttack01_9
       rect:
         serializedVersion: 2
-        x: 634
-        y: 6
-        width: 15
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 630
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,12 +364,12 @@ TextureImporter:
       name: EnemyAttack01_10
       rect:
         serializedVersion: 2
-        x: 707
-        y: 6
-        width: 14
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 700
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,12 +385,12 @@ TextureImporter:
       name: EnemyAttack01_11
       rect:
         serializedVersion: 2
-        x: 778
-        y: 6
-        width: 14
-        height: 42
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 770
+        y: 0
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,48 +398,6 @@ TextureImporter:
       bones: []
       spriteID: fa4e4b50f83cc6090800000000000000
       internalID: -8039836215719697233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyAttack01_12
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 6
-        width: 41
-        height: 20
-      alignment: 9
-      pivot: {x: 0.018555433, y: 0.26674628}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfabef5ddf6b4ae30800000000000000
-      internalID: 4513933927865301755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: EnemyAttack01_13
-      rect:
-        serializedVersion: 2
-        x: 505
-        y: 1
-        width: 42
-        height: 14
-      alignment: 9
-      pivot: {x: -0.008088611, y: 0.45727918}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49effc96cde11bce0800000000000000
-      internalID: -1391296877863895404
       vertices: []
       indices: 
       edges: []

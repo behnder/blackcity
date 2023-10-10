@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3144951880464637398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.66, y: -1.35, z: 0}
+  m_LocalPosition: {x: -32.66, y: -1.266, z: 0}
   m_LocalScale: {x: 2.3089, y: 2.3089, z: 2.3089}
   m_Children:
   - {fileID: 3144951881116728873}
@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6146700129834819302, guid: 00488435109ed12488eebef974eba5ba, type: 3}
-  m_Color: {r: 1, g: 0.26007292, b: 0.24056602, a: 1}
+  m_Sprite: {fileID: -3464384440072141298, guid: 802fbc8425b6d9743a9513920524c847, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -152,11 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5dac9e95182fd24aad36b44bb1df56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetStateName: Enemy_Attack_01
-  hasExitTimeValue: 1
   hero: {fileID: 4926200953660255025, guid: 15b046deb12a8444ca7a02bebe3e567e, type: 3}
   weapon: {fileID: 3144951881116728874}
-  distanceBetween: 2
+  distanceBetween: 4
   target: {fileID: 0}
   activateDistance: 10
   pathupdateSeconds: 0.5
@@ -281,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3144951881116728874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.022, z: 0}
+  m_LocalPosition: {x: -0.218, y: 0.23, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3144951880464637402}
@@ -327,8 +325,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1428692037321510081, guid: b1415d1708b0d634d8ecbe980b90804f, type: 3}
-  m_Color: {r: 0.19215688, g: 0.058823533, b: 0.13725491, a: 1}
+  m_Sprite: {fileID: 1428692037321510081, guid: 095010ff8fc319e449f61d2ece0e7168, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -370,18 +368,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.020084701, y: 0.20999998}
+  m_Offset: {x: -0.16590561, y: 0.03879942}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.14, y: 0.42}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7, y: 0.7}
     newSize: {x: 0.39, y: 0.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08419961, y: 0.36515892}
+  m_Size: {x: 0.14016661, y: 0.41783604}
   m_EdgeRadius: 0
 --- !u!114 &3144951881116728872
 MonoBehaviour:
