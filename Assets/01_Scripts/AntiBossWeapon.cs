@@ -40,13 +40,14 @@ public class AntiBossWeapon : MonoBehaviour
          
         
             Shoot();
-            Invoke("ChangePosition", 0.5f);
+            Invoke("ChangePosition", 1f);
 
         }
 
     }
     private void Shoot()
     {
+        GetComponent<Animator>().SetBool("isShooting", true);
         GameObject bullet = AntiBossWeaponPool.instance.GetPooledObject();
         if (bullet != null)
         {
@@ -74,6 +75,8 @@ public class AntiBossWeapon : MonoBehaviour
 
     private void ChangePosition()
     {
+        GetComponent<Animator>().SetBool("isShooting", false);
+        
         if (direction)
         {
             //position

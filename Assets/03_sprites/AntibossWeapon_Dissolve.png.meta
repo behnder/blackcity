@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: 55f764de5870db64e80457f19e13dc2a
+guid: e6825c8a778b35d44b6c4e7c40d7f069
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7037386730739755796
-    second: AntibossWeapon_0
+      213: 1949752113010418380
+    second: AntibossWeapon_Dissolve_0
   - first:
-      213: -1273987250633125610
-    second: AntibossWeapon_1
+      213: 5326079966590193193
+    second: AntibossWeapon_Dissolve_1
   - first:
-      213: -7552193518490593711
-    second: AntibossWeapon_2
+      213: 9044745584564481975
+    second: AntibossWeapon_Dissolve_2
   - first:
-      213: -2565243954040351028
-    second: AntibossWeapon_3
+      213: 5184610413992709001
+    second: AntibossWeapon_Dissolve_3
   - first:
-      213: 1539031752988189109
-    second: AntibossWeapon_4
+      213: 4870861859418304912
+    second: AntibossWeapon_Dissolve_4
+  - first:
+      213: -7007904049793266401
+    second: AntibossWeapon_Dissolve_5
+  - first:
+      213: -8485419180814929649
+    second: AntibossWeapon_Dissolve_6
+  - first:
+      213: 1670868307779056139
+    second: AntibossWeapon_Dissolve_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AntibossWeapon_0
+      name: AntibossWeapon_Dissolve_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41b6ac822f1d9a160800000000000000
-      internalID: 7037386730739755796
+      spriteID: cc2ad007739ee0b10800000000000000
+      internalID: 1949752113010418380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_1
+      name: AntibossWeapon_Dissolve_1
       rect:
         serializedVersion: 2
         x: 52
@@ -165,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 611d2ad6853e15ee0800000000000000
-      internalID: -1273987250633125610
+      spriteID: 92ecee5c2890ae940800000000000000
+      internalID: 5326079966590193193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_2
+      name: AntibossWeapon_Dissolve_2
       rect:
         serializedVersion: 2
         x: 104
@@ -186,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1565c571208313790800000000000000
-      internalID: -7552193518490593711
+      spriteID: 7bfafb32034658d70800000000000000
+      internalID: 9044745584564481975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_3
+      name: AntibossWeapon_Dissolve_3
       rect:
         serializedVersion: 2
         x: 156
@@ -207,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6d43d073c666cd0800000000000000
-      internalID: -2565243954040351028
+      spriteID: 98b83d8c3bf63f740800000000000000
+      internalID: 5184610413992709001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_4
+      name: AntibossWeapon_Dissolve_4
       rect:
         serializedVersion: 2
         x: 208
@@ -228,8 +237,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b168e6a93dbb5510800000000000000
-      internalID: 1539031752988189109
+      spriteID: 09170a0ed07c89340800000000000000
+      internalID: 4870861859418304912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AntibossWeapon_Dissolve_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1d0d0c656ceebe90800000000000000
+      internalID: -7007904049793266401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AntibossWeapon_Dissolve_6
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f017d35763cbd3a80800000000000000
+      internalID: -8485419180814929649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AntibossWeapon_Dissolve_7
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02f0af8fdd103710800000000000000
+      internalID: 1670868307779056139
       vertices: []
       indices: 
       edges: []

@@ -104,10 +104,6 @@ public class Animation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && isJumping)
         {
             animator.SetBool("isAirAttacking", true);
-
-            //playerMovement.Move = 0; borrar?
-            //playerMovement.rb.velocity = new Vector2(0, playerMovement.rb.velocity.y); borrar?
-
             animator.SetBool("isRunning", false);
 
         }
@@ -207,18 +203,9 @@ public class Animation : MonoBehaviour
     }
     private void DeactivateAirWeapon()
     {
-        //print(GetComponent<Rigidbody2D>().velocity.y + " RIGIDBODY Y");
-        ////StartCoroutine(StopAirAttack());
 
-        //StartCoroutine(WaitToDeactivateAirWeapon());
-
-        //if (Mathf.Abs(playerMovement.rb.velocity.x) < 0.01)
-        //{
            airWeapon.SetActive(false);
-        //}
-
-
-
+     
     }
     IEnumerator StopAirAttack()
     {

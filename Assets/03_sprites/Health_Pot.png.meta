@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 55f764de5870db64e80457f19e13dc2a
+guid: ecc5b70abdc90ef4bba315a606607e77
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7037386730739755796
-    second: AntibossWeapon_0
+      213: -5310052314282603557
+    second: Health_Pot_0
   - first:
-      213: -1273987250633125610
-    second: AntibossWeapon_1
+      213: 1643584415064680688
+    second: Health_Pot_1
   - first:
-      213: -7552193518490593711
-    second: AntibossWeapon_2
+      213: -966123173069585287
+    second: Health_Pot_2
   - first:
-      213: -2565243954040351028
-    second: AntibossWeapon_3
+      213: 1860465251984978218
+    second: Health_Pot_3
   - first:
-      213: 1539031752988189109
-    second: AntibossWeapon_4
+      213: -3650616246319323372
+    second: Health_Pot_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +130,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AntibossWeapon_0
+      name: Health_Pot_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,14 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41b6ac822f1d9a160800000000000000
-      internalID: 7037386730739755796
+      spriteID: bdbc174dd87ee46b0800000000000000
+      internalID: -5310052314282603557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_1
+      name: Health_Pot_1
       rect:
         serializedVersion: 2
         x: 52
@@ -165,14 +165,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 611d2ad6853e15ee0800000000000000
-      internalID: -1273987250633125610
+      spriteID: 0f86c42415f2fc610800000000000000
+      internalID: 1643584415064680688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_2
+      name: Health_Pot_2
       rect:
         serializedVersion: 2
         x: 104
@@ -186,14 +186,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1565c571208313790800000000000000
-      internalID: -7552193518490593711
+      spriteID: 9740ae3c714a792f0800000000000000
+      internalID: -966123173069585287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_3
+      name: Health_Pot_3
       rect:
         serializedVersion: 2
         x: 156
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6d43d073c666cd0800000000000000
-      internalID: -2565243954040351028
+      spriteID: a21b58d1a43b1d910800000000000000
+      internalID: 1860465251984978218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AntibossWeapon_4
+      name: Health_Pot_4
       rect:
         serializedVersion: 2
         x: 208
@@ -228,8 +228,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b168e6a93dbb5510800000000000000
-      internalID: 1539031752988189109
+      spriteID: 417edd2add7665dc0800000000000000
+      internalID: -3650616246319323372
       vertices: []
       indices: 
       edges: []

@@ -21,8 +21,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
 
     private void Start()
     {
-        gunAnimator.Play("Gunner_Gun_Shoot");
-        gunAnimator.Play("Gunner_Gun_Idle");
+       // gunAnimator.GetComponent<Animator>().Play("Gunner_Gun_Idle");
         Health = health;
     }
 
@@ -48,6 +47,8 @@ public class EnemyGunner : MonoBehaviour, IHealth
             // Shoot if the shooting delay has passed and the enemy can shoot
             if (canShoot)
             {
+                //gunAnimator.GetComponent<Animator>().Play("Gunner_Gun_Shoot");
+
                 StartCoroutine(ShootCoroutine());
             }
         }
@@ -56,7 +57,11 @@ public class EnemyGunner : MonoBehaviour, IHealth
     private IEnumerator ShootCoroutine()
     {
         canShoot = false; // Prevent shooting while the coroutine is running
+                          //transform.GetChild(1).GetComponent<Animator>().SetBool("isShooting",true);
+        transform.GetChild(1).GetComponent<Animator>().SetBool("isShooting", false);
+
         yield return new WaitForSeconds(shootingDelay);
+        transform.GetChild(1).GetComponent<Animator>().SetBool("isShooting", true);
 
         // Create a bullet and shoot it in the gun's direction (from the bullet pool)    
         GameObject bullet = ObjectPool.instance.GetPooledObject();
