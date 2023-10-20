@@ -20,21 +20,23 @@ public class Animation : MonoBehaviour
     [SerializeField] GameObject groundCheckerActivator;
     private float speed;
 
+    [Header("Audio")]
+    [Space(10)]
+    [SerializeField] AudioSource groundHit;
+    [SerializeField] AudioSource airHit;
+    [SerializeField] GameObject steps;
+
+
     private void Start()
     {
-
         animator = GetComponent<Animator>();
 
         speed = playerMovement.Speed;
-
-
-
-
     }
 
     private void Update()
     {
-       
+
         ActivateRunningAnimation();
 
         ActivateAttackAnimation();
@@ -46,7 +48,7 @@ public class Animation : MonoBehaviour
         ActivateAirAttackAnimation();
         CheckAirAttackAnimation();
 
-        if (Mathf.Round(playerMovement.rb.velocity.y) !=0 )
+        if (Mathf.Round(playerMovement.rb.velocity.y) != 0)
         {
             groundCheckerActivator.SetActive(false);
         }
@@ -117,7 +119,12 @@ public class Animation : MonoBehaviour
         {
             if (!isJumping)
             {
+
+
+
+
                 animator.SetBool("isAttacking", true);
+
                 playerMovement.Speed = 2;
 
             }
@@ -143,14 +150,17 @@ public class Animation : MonoBehaviour
             isJumping = false;
             animator.SetBool("isJumping", false);
             animator.SetBool("isAirAttacking", false);
+
         }
         else
         {
             isJumping = true;
+            steps.SetActive(false);
         }
         if (Input.GetButtonDown("Jump") && !isJumping)
         {
             isJumping = true;
+            steps.SetActive(false);
             animator.SetBool("isJumping", true);
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
@@ -165,17 +175,25 @@ public class Animation : MonoBehaviour
         move = Input.GetAxis("Horizontal");
         if (move < 0)
         {
+            steps.SetActive(true);
+
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             animator.SetBool("isRunning", true);
         }
         else if (move > 0)
         {
 
+            steps.SetActive(true);
+
+            steps.SetActive(true);
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             animator.SetBool("isRunning", true);
         }
         else if (move == 0)
+        {
             animator.SetBool("isRunning", false);
+            steps.SetActive(false);
+        }
     }
 
     //are called in the animation (attack-punch animation)
@@ -190,10 +208,24 @@ public class Animation : MonoBehaviour
     }
     IEnumerator StopAttack()
     {
+
         yield return new WaitForSeconds(0.3f);
         animator.SetBool("isAttacking", false);
         playerMovement.Speed = 6.5f;
 
+    }
+    //this is called from the animator
+    private void PlayHitSound()
+    {
+        groundHit.Play();
+    }
+    private void PlayAirHitSound()
+    {
+        airHit.Play();
+    }
+    private void PlayStepsSound()
+    {
+        steps.SetActive(true);
     }
 
     //this is for attacking in middle air
@@ -204,8 +236,8 @@ public class Animation : MonoBehaviour
     private void DeactivateAirWeapon()
     {
 
-           airWeapon.SetActive(false);
-     
+        airWeapon.SetActive(false);
+
     }
     IEnumerator StopAirAttack()
     {

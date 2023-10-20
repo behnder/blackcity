@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4652012815567150026}
   - component: {fileID: 1602808275866679721}
   - component: {fileID: 490377964312100296}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: PlayerBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5824930272291219439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -146.48, y: 36.86, z: 0}
-  m_LocalScale: {x: 0.47556144, y: 0.47556144, z: 0.47556144}
+  m_LocalScale: {x: 0.9868946, y: 0.9868946, z: 0.9868946}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.52, y: 0.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

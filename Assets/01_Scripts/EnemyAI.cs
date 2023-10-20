@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] GameObject hero;
     [SerializeField] GameObject weapon;
     [SerializeField] float distanceBetween;
-  
+
 
 
     [Header("Pathfinding")]
@@ -30,6 +30,12 @@ public class EnemyAI : MonoBehaviour
     public bool directionLookEnabled = true;
 
     public Path path;
+
+    [Header("Audio")]
+    [Space(10)]
+    [SerializeField] GameObject attackHitSound;
+    [SerializeField] GameObject dieSound;
+
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
     bool isGrounded = false;
@@ -48,13 +54,23 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         if (Vector2.Distance(gameObject.transform.position, hero.transform.position) < distanceBetween)
+        {
             Weapon.GetComponent<Animator>().Play("Enemy_Attack_01");
+
+            attackHitSound.SetActive(true);
+        }
+
         else
+        {
             Weapon.GetComponent<Animator>().Play("Enemy_Weapon_Idle");
+
+
+        }
     }
 
     private void StopAttack()
     {
+            attackHitSound.SetActive(false);
         Weapon.SetActive(false);
 
     }
@@ -76,7 +92,7 @@ public class EnemyAI : MonoBehaviour
 
     private void PathFollow()
     {
-        if(path == null)
+        if (path == null)
         {
             return;
         }
@@ -93,14 +109,14 @@ public class EnemyAI : MonoBehaviour
 
         //Direction Calculation
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        
+
         Vector2 force = direction * speed * Time.deltaTime;
 
         //Jump
 
-        if(jumpEnabled && isGrounded)
+        if (jumpEnabled && isGrounded)
         {
-            if(direction.y > jumpNodeHeightRequirement)
+            if (direction.y > jumpNodeHeightRequirement)
             {
                 rb.AddForce(Vector2.up * speed * JumpModifier);
             }
@@ -111,14 +127,14 @@ public class EnemyAI : MonoBehaviour
 
         //Next Waypoint
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-        if(distance < nextWaypointDistance)
+        if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
         }
 
         //Direction Grapchics Handling
 
-        if(directionLookEnabled)
+        if (directionLookEnabled)
         {
             if (rb.velocity.x > 0.05f)
             {
@@ -130,7 +146,7 @@ public class EnemyAI : MonoBehaviour
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
-      
+
     }
 
     private bool TargetInDistance()
@@ -146,5 +162,5 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint = 0;
         }
     }
-    
+
 }
