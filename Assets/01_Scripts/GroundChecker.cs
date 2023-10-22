@@ -19,6 +19,7 @@ public class GroundChecker : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             groundChecker = true;
+       
             //anim.Play("Land_Dust");
         }
     }

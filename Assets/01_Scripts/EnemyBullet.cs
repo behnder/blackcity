@@ -11,7 +11,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("DisableBullet", 6f);
+        Invoke("DisableBullet", 4f);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -20,15 +20,9 @@ public class EnemyBullet : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHealth>().Health -= 100;
             DisableBullet();
         }
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            DisableBullet();
-        }
-    }
 
 
     void DisableBullet()

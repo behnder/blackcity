@@ -16,7 +16,7 @@ public class PlatformActivation : MonoBehaviour
     private void Start()
     {
         initialRotation = transform.rotation;
-        targetRotation = initialRotation * Quaternion.Euler(0f, 0f, -90f); // Rotate 90 degrees clockwise
+        targetRotation = initialRotation * Quaternion.Euler(0f, 0f, rotationSpeed); // Rotate 90 degrees clockwise
         elapsedTime = 0f;
     }
 

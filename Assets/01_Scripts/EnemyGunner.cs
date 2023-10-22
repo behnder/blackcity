@@ -6,7 +6,6 @@ public class EnemyGunner : MonoBehaviour, IHealth
 {
 
     [SerializeField] Transform playerTransform;
-    // [SerializeField] GameObject bulletPrefab;
     [SerializeField] float rotationSpeed = 2f;
     [SerializeField] float shootingDelay = 1f;
     [SerializeField] float gunOffset;
@@ -21,7 +20,7 @@ public class EnemyGunner : MonoBehaviour, IHealth
 
     private void Start()
     {
-       // gunAnimator.GetComponent<Animator>().Play("Gunner_Gun_Idle");
+       
         Health = health;
     }
 

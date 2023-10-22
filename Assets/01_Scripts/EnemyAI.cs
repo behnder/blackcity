@@ -57,7 +57,7 @@ public class EnemyAI : MonoBehaviour
         {
             Weapon.GetComponent<Animator>().Play("Enemy_Attack_01");
 
-            attackHitSound.SetActive(true);
+           
         }
 
         else

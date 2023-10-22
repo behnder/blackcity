@@ -11,6 +11,7 @@ TagManager:
   - CameraZoomArea
   - PlayerWeapon01
   - Boss
+  - immortal
   layers:
   - Default
   - TransparentFX

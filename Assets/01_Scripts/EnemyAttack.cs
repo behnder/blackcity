@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     [SerializeField] string tagToCollide;
+    [SerializeField] AudioSource attackSfx;
+    [SerializeField] AudioSource dieSfx;
  
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -21,5 +23,14 @@ public class EnemyAttack : MonoBehaviour
                 collision.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             }
         }
+    }
+    void PlayAttackSFX()
+    {
+        attackSfx.Play();
+    }
+
+    void PlayDieSFX()
+    {
+        dieSfx.Play();
     }
 }

@@ -119,20 +119,11 @@ public class Animation : MonoBehaviour
         {
             if (!isJumping)
             {
-
-
-
-
                 animator.SetBool("isAttacking", true);
-
                 playerMovement.Speed = 2;
-
             }
-
-
             playerMovement.Move = 0;
             playerMovement.rb.velocity = new Vector2(0, playerMovement.rb.velocity.y);
-
 
             animator.SetBool("isRunning", false);
             animator.SetBool("isJumping", false);
@@ -226,7 +217,8 @@ public class Animation : MonoBehaviour
     private void PlayStepsSound()
     {
         steps.SetActive(true);
-    }
+    }   
+
 
     //this is for attacking in middle air
     private void ActivateAirWeapon()

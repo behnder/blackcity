@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     [SerializeField] string tagToCollide;
+    [SerializeField] AudioSource hitOnEnemySFX;
     private int damage = 3;
 
 
@@ -24,6 +25,7 @@ public class AttackArea : MonoBehaviour
             #endregion
             if (collision.GetComponent<IHealth>() != null)
             {
+                hitOnEnemySFX.Play();
                 collision.GetComponent<IHealth>().Health -= 100;
                 collision.GetComponent<IHealth>().CheckHealth();
    
