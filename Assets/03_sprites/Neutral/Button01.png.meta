@@ -1,28 +1,31 @@
 fileFormatVersion: 2
-guid: 9976b51a47bcd134797be2038920d2e7
+guid: 88a3c0b6f28cf40449068bdc51cebd03
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2941129218162111992
-    second: HIT_EFFECT_0
+      213: -3658762254858312073
+    second: Button01_0
   - first:
-      213: 5182747306001779464
-    second: HIT_EFFECT_1
+      213: -4964206399016278700
+    second: Button01_1
   - first:
-      213: -6361210188677234059
-    second: HIT_EFFECT_2
+      213: -5428544731698969207
+    second: Button01_2
   - first:
-      213: -5960531616361457938
-    second: HIT_EFFECT_3
+      213: -2564058252367871749
+    second: Button01_3
   - first:
-      213: 2700298558056492254
-    second: HIT_EFFECT_4
+      213: -4675666548190042127
+    second: Button01_4
   - first:
-      213: -1231309565386525427
-    second: HIT_EFFECT_5
+      213: -6373686739536420687
+    second: Button01_5
   - first:
-      213: 2993327115758356735
-    second: HIT_EFFECT_6
+      213: -1543305928647777790
+    second: Button01_6
+  - first:
+      213: 3184665917479647114
+    second: Button01_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HIT_EFFECT_0
+      name: Button01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 60
-        height: 60
+        width: 190
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f5331fe07df0d820800000000000000
-      internalID: 2941129218162111992
+      spriteID: 77620993d17793dc0800000000000000
+      internalID: -3658762254858312073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HIT_EFFECT_1
+      name: Button01_1
       rect:
         serializedVersion: 2
-        x: 60
+        x: 190
         y: 0
-        width: 60
-        height: 60
+        width: 190
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80b49d62731dce740800000000000000
-      internalID: 5182747306001779464
+      spriteID: 455e9e2e4989b1bb0800000000000000
+      internalID: -4964206399016278700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HIT_EFFECT_2
+      name: Button01_2
       rect:
         serializedVersion: 2
-        x: 120
+        x: 380
         y: 0
-        width: 60
-        height: 60
+        width: 190
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5724c4a590178b7a0800000000000000
-      internalID: -6361210188677234059
+      spriteID: 985c3c3045fe9a4b0800000000000000
+      internalID: -5428544731698969207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HIT_EFFECT_3
+      name: Button01_3
       rect:
         serializedVersion: 2
-        x: 180
+        x: 570
         y: 0
-        width: 60
-        height: 60
+        width: 190
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee65a4e3310f74da0800000000000000
-      internalID: -5960531616361457938
+      spriteID: bf0443cba92aa6cd0800000000000000
+      internalID: -2564058252367871749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HIT_EFFECT_4
+      name: Button01_4
       rect:
         serializedVersion: 2
-        x: 240
+        x: 760
         y: 0
-        width: 60
-        height: 60
+        width: 190
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edce4745b33697520800000000000000
-      internalID: 2700298558056492254
+      spriteID: 1f7a4f21c02bc1fb0800000000000000
+      internalID: -4675666548190042127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HIT_EFFECT_5
+      name: Button01_5
       rect:
         serializedVersion: 2
-        x: 300
+        x: 950
         y: 0
-        width: 60
-        height: 60
+        width: 190
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d05789a597289eee0800000000000000
-      internalID: -1231309565386525427
+      spriteID: 1b0605cfdad1c87a0800000000000000
+      internalID: -6373686739536420687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HIT_EFFECT_6
+      name: Button01_6
       rect:
         serializedVersion: 2
-        x: 360
+        x: 1140
         y: 0
-        width: 60
-        height: 60
+        width: 190
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,8 +279,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff84257072f6a8920800000000000000
-      internalID: 2993327115758356735
+      spriteID: 202e1374f63159ae0800000000000000
+      internalID: -1543305928647777790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button01_7
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 0
+        width: 190
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87faa367c4323c20800000000000000
+      internalID: 3184665917479647114
       vertices: []
       indices: 
       edges: []

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Boss : MonoBehaviour
 {
     [SerializeField]GameObject bossHealth;
+    [SerializeField] string sceneToLoad;
 
     private void Start()
     {
@@ -21,6 +22,6 @@ public class Boss : MonoBehaviour
 
     void LoadScene()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

@@ -12,6 +12,8 @@ TagManager:
   - PlayerWeapon01
   - Boss
   - immortal
+  - BossExternalLayer
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - boss
   - EnemyBullet
   - AntiBossBullet
-  - 
-  - 
+  - Platform
+  - Checkpoint
   - 
   - 
   - 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,38 +8,77 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float health;
-    //[SerializeField] Text text; // just for debug purpouses
- 
+    [SerializeField] TextMeshProUGUI text; 
+
     [SerializeField] GameObject healthBar;
+    [SerializeField] public int lives;
+    private bool isRespawning = false;
 
 
     private Transform cameraTransform;
     private Vector3 originalPosition;
-   
+    private GameObject checkpoint;
+
 
     public float Health { get => health; set => health = value; }
 
     void Start()
     {
+        //Assign lives and health to the GUI
+        text.text = lives.ToString();
         healthBar.GetComponent<Slider>().maxValue = Health;
-   
 
+        //Get the transform of the camera to make the shake effect
         cameraTransform = transform;
         originalPosition = cameraTransform.localPosition;
+    
+
     }
+
+ 
 
     private void Update()
     {
+        
         healthBar.GetComponent<Slider>().value = health;
         //text.text = Health.ToString();// just for debug purpouses
-        if (Health <= 0)
+        if (Health <= 0 && lives <= 0)
         {
-            Shake(0.3f, 0.2f);
+            if (!isRespawning)
+            {
+            Shake(0.2f, 0.1f);
             Invoke("ReloadGame", 1.7f);
+
+            }
+        }
+        else if (lives > 0 && Health <= 0 && !isRespawning)
+        {
+            isRespawning = true;
+            StartCoroutine("GoToTheCheckPoint");
+            
         }
     }
 
-   void ReloadGame()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Checkpoint"))
+        {
+            
+            checkpoint = other.gameObject;
+        }
+    }
+
+    IEnumerator GoToTheCheckPoint()
+    {
+        yield return new WaitForSeconds(2);
+        Health = 400;
+        gameObject.transform.position = checkpoint.gameObject.transform.position;
+        lives--;
+        text.text = lives.ToString();
+        isRespawning = false; // this prevent to count down the lives infinitely inside the Update
+    }
+
+    void ReloadGame()
     {
         SceneManager.LoadScene("MainMenu");
     }

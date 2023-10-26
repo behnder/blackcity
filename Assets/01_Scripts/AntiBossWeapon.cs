@@ -15,7 +15,7 @@ public class AntiBossWeapon : MonoBehaviour
 
     private void Start()
     {
-      
+
         GameObject bullet = AntiBossWeaponPool.instance.GetPooledObject();
 
     }
@@ -23,10 +23,10 @@ public class AntiBossWeapon : MonoBehaviour
     private void Update()
     {
         #region manual shoot(delete this)
-        if (Input.GetButtonDown("Fire2"))
-        {
-            Invoke("Shoot", 0f);
-        }
+        //if (Input.GetButtonDown("Fire2"))
+        //{
+        //    Invoke("Shoot", 0f);
+        //}
         #endregion
     }
 
@@ -34,11 +34,11 @@ public class AntiBossWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.CompareTag("PlayerWeapon01"))
         {
-         
-        
+
+
+            GetComponent<BoxCollider2D>().enabled = false;//prevent double shoot when position is wating for change
             Shoot();
             Invoke("ChangePosition", 1f);
 
@@ -57,7 +57,7 @@ public class AntiBossWeapon : MonoBehaviour
             Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
 
             bullet.SetActive(true);
-            print("Im a bullet active, my position is "+ bullet.transform.position);
+            print("Im a bullet active, my position is " + bullet.transform.position);
             if (direction)
             {
                 bulletRigidbody.velocity = transform.right * bulletVelocity;
@@ -75,8 +75,10 @@ public class AntiBossWeapon : MonoBehaviour
 
     private void ChangePosition()
     {
+        GetComponent<BoxCollider2D>().enabled = true;
+
         GetComponent<Animator>().SetBool("isShooting", false);
-        
+
         if (direction)
         {
             //position

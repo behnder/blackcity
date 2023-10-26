@@ -13,6 +13,11 @@ public class FadeInOutLevel : MonoBehaviour
         {
             GetComponent<Animator>().Play("FadeOut");
         }
+        if (playerHealth.Health > 0)
+        {
+            GetComponent<Animator>().Play("FadeIn");
+        }
+
     }
 
 

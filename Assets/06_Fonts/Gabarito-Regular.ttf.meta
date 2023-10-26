@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: 4aa526f981db94442adb51b839b329a8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Gabarito
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 84979a707c7ed6a47bc7485c8c928b2a, type: 3}
+  - {fileID: 12800000, guid: 9253680fd1a70ff4cac7816293624671, type: 3}
+  - {fileID: 12800000, guid: f959c0d24b79d964eade19b1da59860d, type: 3}
+  - {fileID: 12800000, guid: 81bbf87c7f0dbac48a25dc965ed2b5ca, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

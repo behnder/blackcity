@@ -11,7 +11,7 @@ public class PlatformHorizontalMovement : MonoBehaviour
     private Vector3 startPos;
     private Vector3 endPos;
     private bool movingHorizontal = true;
-   // public GameObject waitForActivation;
+    public GameObject waitForActivation;
 
     private void Start()
     {
@@ -20,8 +20,8 @@ public class PlatformHorizontalMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //if (waitForActivation == null)
-        //{
+        if (waitForActivation == null)
+        {
             // Calculate the new position for the platform and go up or down depending if the route if finished
             Vector3 targetPos = movingHorizontal ? endPos : startPos;
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
@@ -31,7 +31,7 @@ public class PlatformHorizontalMovement : MonoBehaviour
             {
             movingHorizontal = !movingHorizontal; // Change direction.
             }
-        //}
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

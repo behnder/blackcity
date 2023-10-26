@@ -9,7 +9,17 @@ public class SceneChanger : MonoBehaviour
 
     public void GoToNextScene()
     {
+        Invoke("WaitForAnimation", 0.3f);
+    }
+    public void WaitForAnimation()
+    {
+
         SceneManager.LoadScene(nextScene);
+    }
+    public void WaitForQuitGame()
+    {
+        Application.Quit();
+        
     }
 
 }

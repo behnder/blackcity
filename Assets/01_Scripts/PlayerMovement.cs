@@ -23,10 +23,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (canMoveItSelf) // this will be able from knockback script(or not)
+        if (!PauseMenu.isPaused)
         {
-            HorizontalMovement();
-            Jump();
+
+            if (canMoveItSelf) // this will be able from knockback script(or not)
+            {
+                HorizontalMovement();
+                Jump();
+            }
         }
     }
 

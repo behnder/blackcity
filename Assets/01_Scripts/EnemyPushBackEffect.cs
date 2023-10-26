@@ -14,7 +14,11 @@ public class EnemyPushBackEffect : MonoBehaviour
         Vector2 pushbackDirection = new Vector2(hitDirection.x,0) ;// just push in X direction
 
         // Apply the pushback force to the enemy's Rigidbody2D
+        if (GetComponent<Rigidbody2D>() != null)
+        {
         GetComponent<Rigidbody2D>().AddForce(pushbackDirection * pushbackForce, ForceMode2D.Impulse);
+
+        }
     }
 
   

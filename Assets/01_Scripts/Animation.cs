@@ -11,8 +11,8 @@ public class Animation : MonoBehaviour
     [SerializeField] float move;
     [SerializeField] GameObject weapon;
     [SerializeField] GameObject airWeapon;
-    [SerializeField] Text yPos;
-    [SerializeField] Text xPos;
+    //[SerializeField] Text yPos;
+    //[SerializeField] Text xPos;
 
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] GroundChecker groundChecker;
@@ -36,26 +36,29 @@ public class Animation : MonoBehaviour
 
     private void Update()
     {
-
-        ActivateRunningAnimation();
-
-        ActivateAttackAnimation();
-        ActivateJumpAnimation();
-
-        ActivateCrouchAnimation();
-        ActivateIdleAnimation();
-
-        ActivateAirAttackAnimation();
-        CheckAirAttackAnimation();
-
-        if (Mathf.Round(playerMovement.rb.velocity.y) != 0)
+        if (!PauseMenu.isPaused)
         {
-            groundCheckerActivator.SetActive(false);
-        }
-        else
-        {
-            groundCheckerActivator.SetActive(true);
 
+            ActivateRunningAnimation();
+
+            ActivateAttackAnimation();
+            ActivateJumpAnimation();
+
+            ActivateCrouchAnimation();
+            ActivateIdleAnimation();
+
+            ActivateAirAttackAnimation();
+            CheckAirAttackAnimation();
+
+            if (Mathf.Round(playerMovement.rb.velocity.y) != 0)
+            {
+                groundCheckerActivator.SetActive(false);
+            }
+            else
+            {
+                groundCheckerActivator.SetActive(true);
+
+            }
         }
     }
 
@@ -103,7 +106,7 @@ public class Animation : MonoBehaviour
 
     private void ActivateAirAttackAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isJumping)
+        if ((Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K)) && isJumping)
         {
             animator.SetBool("isAirAttacking", true);
             animator.SetBool("isRunning", false);
@@ -115,7 +118,7 @@ public class Animation : MonoBehaviour
 
     private void ActivateAttackAnimation()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))
         {
             if (!isJumping)
             {
@@ -153,7 +156,7 @@ public class Animation : MonoBehaviour
             isJumping = true;
             steps.SetActive(false);
             animator.SetBool("isJumping", true);
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.K))
             {
                 animator.SetBool("isAttacking", false);
                 animator.SetBool("isAirAttacking", true);
@@ -217,7 +220,7 @@ public class Animation : MonoBehaviour
     private void PlayStepsSound()
     {
         steps.SetActive(true);
-    }   
+    }
 
 
     //this is for attacking in middle air
